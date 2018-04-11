@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
+
 import Layout from './components/Layout'
 import PageNotFound from './components/PageNotFound'
 import { routes } from './routes'

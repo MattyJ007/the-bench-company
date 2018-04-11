@@ -1,17 +1,19 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { Router } from 'react-router-dom'
+import { MuiThemeProvider } from 'material-ui/styles'
+
 import App from './App'
 import registerServiceWorker from './registerServiceWorker'
-import { BrowserRouter } from 'react-router-dom'
-import { MuiThemeProvider } from 'material-ui/styles'
 import { theme } from './theme'
+import history from './history'
 
 const Main = () => (
-  <BrowserRouter>
+  <Router history={history}>
     <MuiThemeProvider theme={theme}>
       <App />
     </MuiThemeProvider>
-  </BrowserRouter>
+  </Router>
 )
 
 ReactDOM.render(<Main />, document.getElementById('root'))

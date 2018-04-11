@@ -6,15 +6,10 @@ import Menu from './Menu'
 
 const styles = theme => {
   return {
-    content: {
-      flex: 1
-    },
-    nav: {
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      height: '80px',
-      backgroundColor: 'hsl(0, 0%, 15%)'
+    '@global body': {
+      padding: 0,
+      margin: 0,
+      fontFamily: theme.typography.body1.fontFamily
     }
   }
 }
