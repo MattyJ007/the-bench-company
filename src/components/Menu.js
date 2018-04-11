@@ -3,15 +3,19 @@ import PropTypes from 'prop-types'
 import { withStyles } from 'material-ui/styles'
 import ButtonBase from 'material-ui/ButtonBase'
 import { NavLink } from 'react-router-dom'
+import AppBar from 'material-ui/AppBar'
 import Typography from 'material-ui/Typography'
 import { routes } from '../routes'
+import logo from '../images/firefox.png'
 
 const styles = theme => ({
   root: {
     display: 'flex',
+    flexGrow: 1,
     flexWrap: 'wrap',
     minWidth: 50,
-    width: '100%'
+    width: '100%',
+    flexDirection: 'row'
   },
   navButton: {
     position: 'relative',
@@ -80,8 +84,25 @@ function ButtonBases (props) {
   const { classes } = props
 
   return (
-    <div className={classes.root}>
-      {Object.keys(routes).map(navigationOption => (
+    <AppBar className={classes.root}>
+      <NavLink
+        key='logo'
+        to='/'
+        activeClassName={classes.selected}
+        className={classes.navStyle}
+        exact
+      >
+        <ButtonBase
+          focusRipple
+          key='logo'
+          className={classes.navButton}
+          activeClassName={classes.selected}
+        >
+          <img height='80px' src={logo} alt='' />
+        </ButtonBase>
+      </NavLink>
+
+      {Object.keys(routes).filter(route => route !== 'Home').map(navigationOption => (
         <NavLink
           key={navigationOption}
           to={routes[navigationOption].path}
@@ -109,7 +130,7 @@ function ButtonBases (props) {
           </ButtonBase>
         </NavLink>
       ))}
-    </div>
+    </AppBar>
   )
 }
 
