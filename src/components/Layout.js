@@ -10,6 +10,17 @@ const styles = theme => {
       padding: 0,
       margin: 0,
       fontFamily: theme.typography.body1.fontFamily
+    },
+    content: {
+      flex: 1,
+      marginTop: theme.spacing.unit * 7,
+      [theme.breakpoints.up('sm')]: {
+        marginTop: theme.spacing.unit * 8
+      },
+      [theme.breakpoints.up('md')]: {
+        marginTop: 0,
+        marginLeft: theme.spacing.unit * 32
+      }
     }
   }
 }
@@ -18,9 +29,11 @@ export class Layout extends Component {
   render () {
     const {children, classes} = this.props
     return (
-      <div className={classes.content}>
+      <div>
         <Menu />
-        {children}
+        <div className={classes.content}>
+          {children}
+        </div>
       </div>
     )
   }

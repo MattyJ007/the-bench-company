@@ -1,4 +1,8 @@
 import Home from './components/HomeTab'
+import About from './components/AboutTab'
+import Gallery from './components/GalleryTab'
+import Products from './components/ProductsTab'
+import ContactUs from './components/ContactUsTab'
 
 export const routes = {
   Home: {
@@ -9,21 +13,21 @@ export const routes = {
   About: {
     path: '/About',
     exact: true,
-    component: Home
+    component: About
   },
   Gallery: {
     path: '/Gallery',
     exact: true,
-    component: Home
+    component: Gallery
   },
   Products: {
     path: '/Products',
     exact: true,
-    component: Home
+    component: Products
   },
   ContactUs: {
     path: '/ContactUs',
     exact: true,
-    component: Home
+    component: ContactUs
   }
 }
